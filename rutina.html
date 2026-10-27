@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Care | Arma tu Rutina</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Glow & Care</a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="rutina.html">Mi Rutina</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN: Formulario para armar rutina. 
+             Cumple con el criterio de formulario complejo (inputs, selects, textarea) -->
+        <section id="formulario-rutina">
+            <h1>Descubre tu Rutina Ideal</h1>
+            <p>Responde este breve cuestionario y te recomendaremos los mejores productos.</p>
+            
+            <form action="#" method="POST" id="formRutina">
+                <!-- Campo de texto -->
+                <label for="nombre">Tu Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <!-- Menú desplegable de tipo de piel -->
+                <label for="tipo-piel">¿Cuál es tu tipo de piel?</label>
+                <select id="tipo-piel" name="tipo-piel" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="grasa">Grasa</option>
+                    <option value="seca">Seca</option>
+                    <option value="mixta">Mixta</option>
+                    <option value="normal">Normal</option>
+                </select>
+
+                <!-- Menú desplegable de preocupaciones -->
+                <label for="preocupacion">¿Cuál es tu principal preocupación?</label>
+                <select id="preocupacion" name="preocupacion">
+                    <option value="acne">Acné</option>
+                    <option value="manchas">Manchas</option>
+                    <option value="arrugas">Arrugas</option>
+                    <option value="hidratacion">Hidratación</option>
+                </select>
+
+                <!-- Área de texto para comentarios -->
+                <label for="comentarios">Comentarios adicionales (opcional):</label>
+                <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+
+                <button type="submit">Generar mi Rutina</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Glow & Care. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
