@@ -4,55 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow & Care | Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Glow & Care</a>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="rutina.html">Mi Rutina</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <!-- SECCIÓN: Información de contacto -->
-        <section id="info-contacto">
-            <h1>Ponte en Contacto</h1>
-            <p>¿Tienes dudas? Escríbenos y te responderemos a la brevedad.</p>
-            
-            <article>
-                <h2>Información de Contacto</h2>
-                <ul>
-                    <li><strong>Teléfono:</strong> +52 123 456 7890</li>
-                    <li><strong>Email:</strong> hola@glowandcare.com</li>
-                    <li><strong>Dirección:</strong> Av. Principal #123, Ciudad.</li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Glow & Care</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rutina.html">Mi Rutina</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
                 </ul>
-            </article>
-        </section>
+            </div>
+        </div>
+    </nav>
 
-        <!-- SECCIÓN: Formulario de contacto simple -->
-        <section id="formulario-contacto">
-            <form action="#" method="POST" id="formContacto">
-                <label for="email">Tu Correo:</label>
-                <input type="email" id="email" name="email" required>
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-5 mb-4">
+                <h1>Ponte en Contacto</h1>
+                <p class="text-muted">¿Tienes dudas? Escríbenos y te responderemos a la brevedad.</p>
                 
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </section>
+                <ul class="list-unstyled mt-4">
+                    <li class="mb-2"><strong>Teléfono:</strong> +52 123 456 7890</li>
+                    <li class="mb-2"><strong>Email:</strong> hola@glowandcare.com</li>
+                    <li class="mb-2"><strong>Dirección:</strong> Av. Principal #123, Ciudad.</li>
+                </ul>
+            </div>
+
+            <div class="col-md-7">
+                <form id="formContacto">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Tu Correo:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn w-100">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
     </main>
 
-    <footer>
+    <footer class="text-center py-4 mt-5">
         <p>&copy; 2024 Glow & Care. Todos los derechos reservados.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
 </body>
 </html>

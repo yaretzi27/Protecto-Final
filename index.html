@@ -1,75 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Metadatos esenciales para la codificación y adaptabilidad móvil -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow & Care | Inicio</title>
-    <!-- Aquí irá el enlace a Bootstrap y tu CSS después -->
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome (Punto 3.6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- ENCABEZADO: Contiene el logo y el menú de navegación principal -->
-    <header>
-        <nav>
-            <!-- Logo que redirige al inicio -->
-            <a href="index.html">Glow & Care</a>
-            <!-- Lista de enlaces a las 5 páginas del sitio -->
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="rutina.html">Mi Rutina</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- NAVBAR BOOTSTRAP (Punto 3.3) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Glow & Care</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rutina.html">Mi Rutina</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
-    <main>
-        <!-- SECCIÓN 1: Carrusel  -->
-        <section id="hero-carrusel">
-            <h1>Descubre tu mejor versión</h1>
-            <p>Productos naturales para el cuidado de tu piel.</p>
-            <!-- Aquí insertaremos las imágenes del carrusel y los botones después -->
-        </section>
+    <main class="container my-4">
+        <!-- CARRUSEL BOOTSTRAP (Punto 3.6) -->
+        <div id="carruselPrincipal" class="carousel slide mb-5 shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="1"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- Aquí pondrás tus imágenes luego: <img src="img/banner1.jpg" class="d-block w-100" alt="..."> -->
+                    <div class="carousel-bg d-flex align-items-center justify-content-center" style="background-color: var(--color-secundario); height: 400px;">
+                        <div class="text-center">
+                            <h1>Descubre tu mejor versión</h1>
+                            <p>Productos naturales para el cuidado de tu piel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-bg d-flex align-items-center justify-content-center" style="background-color: var(--color-primario); height: 400px;">
+                        <div class="text-center text-white">
+                            <h2>Rutina perfecta</h2>
+                            <p>Encuentra lo que tu piel necesita.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselPrincipal" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselPrincipal" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
 
-        <!-- SECCIÓN 2: Productos Destacados -->
+        <!-- PRODUCTOS DESTACADOS -->
         <section id="productos-destacados">
-            <h2>Destacados de la semana</h2>
-            
-            <!-- Artículo 1: Producto individual -->
-            <article>
-                <h3>Crema Hidratante de Rosas</h3>
-                <!-- Imagen con texto alternativo (alt) para accesibilidad -->
-                <img src="img/crema-rosas.jpg" alt="Crema hidratante de rosas en frasco de vidrio" width="200">
-                <p>$25.00</p>
-            </article>
-            
-            <!-- Artículo 2: Producto individual -->
-            <article>
-                <h3>Sérum de Vitamina C</h3>
-                <img src="img/serum-vitamingita-c.jpg" alt="Frasco de sérum de vitamina C" width="200">
-                <p>$30.00</p>
-            </article>
+            <h2 class="text-center mb-4">Destacados de la semana</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <article>
+                        <h3>Crema Hidratante de Rosas</h3>
+                        <p>$25.00</p>
+                    </article>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <article>
+                        <h3>Sérum de Vitamina C</h3>
+                        <p>$30.00</p>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <!-- SECCIÓN 3: Beneficios de la marca -->
-        <section id="beneficios">
+        <!-- BENEFICIOS -->
+        <section id="beneficios" class="text-center bg-light p-4 rounded mt-4">
             <h2>¿Por qué elegirnos?</h2>
-            <ul>
-                <li>100% Libre de crueldad animal</li>
-                <li>Ingredientes naturales</li>
-                <li>Envíos a todo el país</li>
+            <ul class="list-unstyled d-flex justify-content-center gap-4 mt-3">
+                <li><i class="fa-solid fa-leaf text-success"></i> 100% Natural</li>
+                <li><i class="fa-solid fa-heart text-danger"></i> Libre de crueldad</li>
+                <li><i class="fa-solid fa-truck text-primary"></i> Envíos a todo el país</li>
             </ul>
         </section>
     </main>
 
-    <!-- PIE DE PÁGINA: Información de derechos y redes -->
-    <footer>
+    <footer class="text-center py-4 mt-5">
         <p>&copy; 2024 Glow & Care. Todos los derechos reservados.</p>
-        <p>Síguenos en nuestras redes sociales.</p>
     </footer>
 
+    <!-- Bootstrap JS Bundle (incluye Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

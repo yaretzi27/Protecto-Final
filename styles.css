@@ -1,0 +1,116 @@
+/* =========================================
+   IMPORTACIÓN DE FUENTES
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* =========================================
+   VARIABLES
+   ========================================= */
+:root {
+    --color-fondo: #fdfbf7;
+    --color-primario: #d4a373;
+    --color-secundario: #faedcd;
+    --color-texto: #4a4a4a;
+    --color-titulos: #2c3e50;
+    --fuente-titulos: 'Playfair Display', serif;
+    --fuente-textos: 'Poppins', sans-serif;
+}
+
+/* =========================================
+   GENERALES
+   ========================================= */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-textos);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-titulos);
+}
+
+main { flex: 1; }
+
+/* Navbar */
+.navbar-brand {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario) !important;
+}
+
+.nav-link.active {
+    color: var(--color-primario) !important;
+    font-weight: 600;
+}
+
+/* =========================================
+   TARJETAS Y EFECTO ZOOM
+   ========================================= */
+article {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+}
+
+/* Efecto Zoom (3.6) */
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.4s ease-in-out;
+}
+
+article:hover img {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   BOTONES (Personalizados sobre Bootstrap)
+   ========================================= */
+.btn, form button {
+    background-color: var(--color-primario);
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover, form button:hover {
+    background-color: #b8865a;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   FORMULARIOS
+   ========================================= */
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 5px rgba(212, 163, 115, 0.3);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background-color: var(--color-titulos);
+    color: white;
+    margin-top: auto;
+}
