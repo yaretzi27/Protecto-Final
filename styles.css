@@ -1,19 +1,25 @@
 /* =========================================
-   VARIABLES (Paleta Morada)
+   VARIABLES (Paleta Rosa + Morado)
    ========================================= */
 :root {
-    --bg-general: #f4effa;       /* Fondo lila claro */
-    --bg-tarjetas: #ffffff;      /* Fondo blanco para tarjetas */
-    --bg-secciones: #e8def8;     /* Fondo lila para secciones */
-    --color-primario: #9c7cdb;   /* Botones y acentos */
-    --color-hover: #7e5bc5;      /* Botón al pasar mouse */
-    --texto-titulos: #3b2159;    /* Morado oscuro para títulos */
-    --texto-general: #555555;    /* Gris para párrafos */
-    --texto-claro: #f4effa;      /* Texto del footer */
+    /* Fondos: Rosa muy claro y un toque de morado */
+    --bg-general: #fff5f8;       /* Fondo general: Rosa palo súper claro */
+    --bg-tarjetas: #ffffff;      /* Blanco puro para resaltar las tarjetas */
+    --bg-secciones: #fce4ec;     /* Rosa pastel para secciones especiales */
+    
+    /* Colores principales */
+    --color-primario: #b57edc;   /* Morado principal (Botones) */
+    --color-hover: #9b59b6;      /* Morado más oscuro (Hover) */
+    --color-rosa: #f48fb1;       /* Rosa fuerte para acentos (Iconos, detalles) */
+    
+    /* Textos */
+    --texto-titulos: #6a1b9a;    /* Morado profundo para títulos (muy elegante) */
+    --texto-general: #5c5c5c;    /* Gris medio para párrafos */
+    --texto-claro: #fdf8ff;      /* Blanco lila para el footer */
 }
 
 /* =========================================
-   ESTILOS GENERALES
+   GENERALES
    ========================================= */
 body {
     background-color: var(--bg-general);
@@ -21,7 +27,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Hace que el footer siempre esté abajo */
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -30,11 +36,9 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-main { flex: 1; } /* Empuja el footer hacia abajo */
+main { flex: 1; }
 
-/* =========================================
-   NAVBAR
-   ========================================= */
+/* Navbar */
 .navbar-brand {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--texto-titulos) !important;
@@ -43,7 +47,7 @@ main { flex: 1; } /* Empuja el footer hacia abajo */
 }
 
 .nav-link.active {
-    color: var(--color-hover) !important;
+    color: var(--color-rosa) !important; /* El link activo se ilumina en rosa */
     font-weight: bold;
 }
 
@@ -54,11 +58,11 @@ article {
     background: var(--bg-tarjetas);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(59, 33, 89, 0.08);
+    box-shadow: 0 6px 15px rgba(181, 126, 220, 0.15); /* Sombra morada suave */
     text-align: center;
     transition: transform 0.3s ease;
-    overflow: hidden; /* Evita que la imagen se salga al hacer zoom */
-    border: 1px solid #e1d5f0;
+    overflow: hidden;
+    border: 1px solid #fce4ec; /* Borde rosa pastel */
     height: 100%;
 }
 
@@ -67,28 +71,28 @@ article h3 {
     margin-top: 15px;
 }
 
-/* TAMAÑO CONTROLADO DE LAS IMÁGENES DEL CATÁLOGO E INDEX */
+/* TAMAÑO CONTROLADO DE LAS IMÁGENES */
 article img {
     width: 100%;
-    max-width: 220px; /* No crecerá más de 220px de ancho */
-    height: 220px;    /* Altura fija para que todas se vean parejas */
-    object-fit: cover; /* Recorta la imagen para que no se deforme */
+    max-width: 220px; 
+    height: 220px;    
+    object-fit: cover; 
     border-radius: 8px;
     transition: transform 0.4s ease-in-out;
     display: block;
-    margin: 0 auto;   /* Centra la imagen */
+    margin: 0 auto;
 }
 
-/* EFECTO ZOOM: Cuando pasas el mouse sobre la tarjeta, la imagen crece un 10% */
+/* EFECTO ZOOM */
 article:hover img {
     transform: scale(1.1);
 }
 
 /* =========================================
-   BOTONES
+   BOTONES (Morado con hover Rosa)
    ========================================= */
 .btn, form button {
-    background-color: var(--color-primario);
+    background-color: var(--color-primario); /* Morado */
     color: #ffffff;
     font-weight: 600;
     border: none;
@@ -98,9 +102,9 @@ article:hover img {
 }
 
 .btn:hover, form button:hover {
-    background-color: var(--color-hover);
+    background-color: var(--color-rosa); /* Cambia a rosa al pasar el mouse */
     color: #ffffff;
-    transform: translateY(-2px); /* Pequeño salto visual */
+    transform: translateY(-2px); 
 }
 
 /* =========================================
@@ -110,8 +114,8 @@ form {
     background: var(--bg-tarjetas);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(59, 33, 89, 0.08);
-    border: 1px solid #e1d5f0;
+    box-shadow: 0 4px 15px rgba(181, 126, 220, 0.1);
+    border: 1px solid #fce4ec;
 }
 
 form label {
@@ -122,15 +126,14 @@ form label {
 form input, form select, form textarea {
     background-color: var(--bg-general);
     color: var(--texto-general);
-    border: 1px solid #d1c0e8;
+    border: 1px solid #e1bee7;
     padding: 10px;
     border-radius: 8px;
 }
 
-/* Cuando haces clic en un input, se ilumina de morado */
 form input:focus, form select:focus, form textarea:focus {
-    border-color: var(--color-primario);
-    box-shadow: 0 0 8px rgba(156, 124, 219, 0.4); 
+    border-color: var(--color-rosa);
+    box-shadow: 0 0 8px rgba(244, 143, 177, 0.4); /* Resplandor rosa */
     background-color: #ffffff;
 }
 
@@ -138,34 +141,35 @@ form input:focus, form select:focus, form textarea:focus {
    SECCIONES CON FONDO DESTACADO
    ========================================= */
 .seccion-destacada {
-    background-color: var(--bg-secciones) !important;
+    background-color: var(--bg-secciones) !important; /* Fondo rosa pastel */
     padding: 30px;
     border-radius: 15px;
+    border: 1px solid #f8bbd0;
 }
 
 /* =========================================
    IMÁGENES FUERA DE LAS TARJETAS
    ========================================= */
 
-/* Imagen de Contacto (Tamaño mediano) */
+/* Imagen de Contacto */
 .imagen-contacto {
     width: 100%;
     max-width: 280px; 
     height: auto;
     border-radius: 15px;
     margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(59, 33, 89, 0.15);
+    box-shadow: 0 4px 15px rgba(244, 143, 177, 0.2);
     display: block;
 }
 
-/* Imagen de Quiénes Somos (Tamaño mediano-grande) */
+/* Imagen de Quiénes Somos */
 .imagen-equipo {
     width: 100%;
     max-width: 380px;
     height: auto;
     border-radius: 15px;
     margin-top: 20px;
-    box-shadow: 0 5px 15px rgba(59, 33, 89, 0.15);
+    box-shadow: 0 5px 15px rgba(244, 143, 177, 0.2);
     display: block;
 }
 
@@ -176,7 +180,7 @@ form input:focus, form select:focus, form textarea:focus {
     height: 180px;
     object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(59, 33, 89, 0.15);
+    box-shadow: 0 4px 15px rgba(244, 143, 177, 0.2);
     display: block;
     margin: 0 auto;
 }
@@ -185,9 +189,17 @@ form input:focus, form select:focus, form textarea:focus {
    FOOTER
    ========================================= */
 footer {
-    background-color: var(--texto-titulos); 
+    background-color: var(--texto-titulos); /* Fondo morado profundo */
     color: var(--texto-claro); 
     margin-top: auto;
     padding: 25px 0;
     text-align: center;
 }
+
+/* =========================================
+   DETALLE EXTRA: ICONOS DE LA SECCIÓN BENEFICIOS
+   ========================================= */
+/* Forzamos a que los iconos de FontAwesome se vean en rosa o morado */
+.fa-leaf { color: var(--color-primario) !important; } /* Morado */
+.fa-heart { color: var(--color-rosa) !important; }    /* Rosa */
+.fa-truck { color: var(--color-primario) !important; } /* Morado */
