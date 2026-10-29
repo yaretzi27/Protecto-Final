@@ -1,20 +1,19 @@
 /* =========================================
-   VARIABLES (Paleta Morada Variada)
+   VARIABLES (Paleta Morada)
    ========================================= */
 :root {
-    --bg-general: #f4effa;       /* Lila muy claro para el fondo de la página */
-    --bg-tarjetas: #ffffff;      /* Blanco puro para resaltar las tarjetas */
-    --bg-secciones: #e8def8;     /* Lila un poco más fuerte para secciones especiales */
-    
-    --color-primario: #9c7cdb;   /* Morado medio (Botones) */
-    --color-hover: #7e5bc5;      /* Morado más oscuro para cuando pasas el mouse */
-    --texto-titulos: #3b2159;    /* Morado muy oscuro casi negro (para títulos) */
-    --texto-general: #555555;    /* Gris medio para párrafos normales */
-    --texto-claro: #f4effa;      /* Lila claro para el texto del footer */
+    --bg-general: #f4effa;       /* Fondo lila claro */
+    --bg-tarjetas: #ffffff;      /* Fondo blanco para tarjetas */
+    --bg-secciones: #e8def8;     /* Fondo lila para secciones */
+    --color-primario: #9c7cdb;   /* Botones y acentos */
+    --color-hover: #7e5bc5;      /* Botón al pasar mouse */
+    --texto-titulos: #3b2159;    /* Morado oscuro para títulos */
+    --texto-general: #555555;    /* Gris para párrafos */
+    --texto-claro: #f4effa;      /* Texto del footer */
 }
 
 /* =========================================
-   GENERALES
+   ESTILOS GENERALES
    ========================================= */
 body {
     background-color: var(--bg-general);
@@ -22,7 +21,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Hace que el footer siempre esté abajo */
 }
 
 h1, h2, h3 {
@@ -31,9 +30,11 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-main { flex: 1; }
+main { flex: 1; } /* Empuja el footer hacia abajo */
 
-/* Navbar */
+/* =========================================
+   NAVBAR
+   ========================================= */
 .navbar-brand {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--texto-titulos) !important;
@@ -47,7 +48,7 @@ main { flex: 1; }
 }
 
 /* =========================================
-   TARJETAS Y EFECTO ZOOM
+   TARJETAS E IMÁGENES DEL INDEX/CATÁLOGO
    ========================================= */
 article {
     background: var(--bg-tarjetas);
@@ -56,30 +57,29 @@ article {
     box-shadow: 0 6px 15px rgba(59, 33, 89, 0.08);
     text-align: center;
     transition: transform 0.3s ease;
-    overflow: hidden;
+    overflow: hidden; /* Evita que la imagen se salga al hacer zoom */
     border: 1px solid #e1d5f0;
+    height: 100%;
 }
 
 article h3 {
     color: var(--texto-titulos);
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
-article p {
-    color: var(--texto-general);
-}
-
-/* Efecto Zoom (Ajustado: Imágenes GRANDES) */
+/* TAMAÑO CONTROLADO DE LAS IMÁGENES DEL CATÁLOGO E INDEX */
 article img {
-    width: 100%;          /* Ocupa todo el ancho de la tarjeta */
-    height: 300px;        /* Altura grande para que se luzcan (antes 220px) */
-    object-fit: cover; 
+    width: 100%;
+    max-width: 220px; /* No crecerá más de 220px de ancho */
+    height: 220px;    /* Altura fija para que todas se vean parejas */
+    object-fit: cover; /* Recorta la imagen para que no se deforme */
     border-radius: 8px;
     transition: transform 0.4s ease-in-out;
     display: block;
-    margin: 0 auto 15px auto; /* Centrada con margen abajo */
+    margin: 0 auto;   /* Centra la imagen */
 }
 
+/* EFECTO ZOOM: Cuando pasas el mouse sobre la tarjeta, la imagen crece un 10% */
 article:hover img {
     transform: scale(1.1);
 }
@@ -95,13 +95,12 @@ article:hover img {
     padding: 12px;
     border-radius: 8px;
     transition: background-color 0.3s, transform 0.2s;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn:hover, form button:hover {
     background-color: var(--color-hover);
     color: #ffffff;
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Pequeño salto visual */
 }
 
 /* =========================================
@@ -124,8 +123,11 @@ form input, form select, form textarea {
     background-color: var(--bg-general);
     color: var(--texto-general);
     border: 1px solid #d1c0e8;
+    padding: 10px;
+    border-radius: 8px;
 }
 
+/* Cuando haces clic en un input, se ilumina de morado */
 form input:focus, form select:focus, form textarea:focus {
     border-color: var(--color-primario);
     box-shadow: 0 0 8px rgba(156, 124, 219, 0.4); 
@@ -145,10 +147,10 @@ form input:focus, form select:focus, form textarea:focus {
    IMÁGENES FUERA DE LAS TARJETAS
    ========================================= */
 
-/* Imagen de Contacto (Ahora GRANDE) */
+/* Imagen de Contacto (Tamaño mediano) */
 .imagen-contacto {
     width: 100%;
-    max-width: 450px; /* Aumentado de 220px a 450px para que se vea grande */
+    max-width: 280px; 
     height: auto;
     border-radius: 15px;
     margin-top: 20px;
@@ -156,10 +158,10 @@ form input:focus, form select:focus, form textarea:focus {
     display: block;
 }
 
-/* Imagen de Quiénes Somos (Ya era grande, la mantenemos) */
+/* Imagen de Quiénes Somos (Tamaño mediano-grande) */
 .imagen-equipo {
     width: 100%;
-    max-width: 500px; /* Un poquito más grande también */
+    max-width: 380px;
     height: auto;
     border-radius: 15px;
     margin-top: 20px;
@@ -170,15 +172,17 @@ form input:focus, form select:focus, form textarea:focus {
 /* Imagen de Rutina */
 .imagen-rutina {
     width: 100%;
-    max-width: 350px;
-    height: 250px; /* Un poco más alta */
+    max-width: 300px;
+    height: 180px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(59, 33, 89, 0.15);
+    display: block;
+    margin: 0 auto;
 }
 
 /* =========================================
-   FOOTER (Contraste fuerte)
+   FOOTER
    ========================================= */
 footer {
     background-color: var(--texto-titulos); 

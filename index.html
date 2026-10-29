@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow & Care | Inicio</title>
-    <!-- Bootstrap 5 CSS -->
+    <!-- Bootstrap 5 CSS: Nos da la base del diseño responsivo, el carrusel y el menú -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome (Punto 3.6) -->
+    <!-- FontAwesome: Para los iconos de la sección de beneficios -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Tu CSS -->
+    <!-- Tu CSS personalizado (Colores, fuentes, zoom). SIEMPRE debe ir después de Bootstrap -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- NAVBAR BOOTSTRAP (Punto 3.3) -->
+    <!-- NAVBAR BOOTSTRAP: Menú de navegación. "navbar-expand-lg" hace que en celular se vuelva un botón hamburguesa -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Glow & Care</a>
@@ -33,24 +33,27 @@
     </nav>
 
     <main class="container my-4">
-        <!-- CARRUSEL BOOTSTRAP (Punto 3.6) -->
+        <!-- CARRUSEL BOOTSTRAP: 
+             data-bs-ride="carousel" hace que cambie solo.
+             Los botones de abajo (carousel-indicators) permiten saltar de imagen. -->
         <div id="carruselPrincipal" class="carousel slide mb-5 shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="1"></button>
             </div>
             <div class="carousel-inner">
+                <!-- Diapositiva 1: Fondo morado claro con texto (puedes cambiar el color en el CSS) -->
                 <div class="carousel-item active">
-                     <img src="./img/img8.jpg" class="d-block w-100" alt="..."> 
-                    <div class="carousel-bg d-flex align-items-center justify-content-center" style="background-color: var(--color-secundario); height: 400px;">
+                    <div class="d-flex align-items-center justify-content-center" style="background-color: var(--bg-secciones); height: 400px;">
                         <div class="text-center">
                             <h1>Descubre tu mejor versión</h1>
                             <p>Productos naturales para el cuidado de tu piel.</p>
                         </div>
                     </div>
                 </div>
+                <!-- Diapositiva 2: Fondo morado un poco más fuerte -->
                 <div class="carousel-item">
-                    <div class="carousel-bg d-flex align-items-center justify-content-center" style="background-color: var(--color-primario); height: 400px;">
+                    <div class="d-flex align-items-center justify-content-center" style="background-color: var(--color-primario); height: 400px;">
                         <div class="text-center text-white">
                             <h2>Rutina perfecta</h2>
                             <p>Encuentra lo que tu piel necesita.</p>
@@ -58,6 +61,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Flechas para pasar de diapositiva -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carruselPrincipal" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </button>
@@ -66,22 +70,23 @@
             </button>
         </div>
 
-        <!-- PRODUCTOS DESTACADOS -->
+        <!-- PRODUCTOS DESTACADOS (Usa el sistema de rejilla de Bootstrap: col-md-6 = mitad de pantalla) -->
         <section id="productos-destacados">
             <h2 class="text-center mb-4">Destacados de la semana</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <article class="text-center"> <!-- Le agregué text-center para que la imagen quede centrada -->
-                        <!-- AQUÍ ESTÁ LA IMAGEN -->
-                        <img src="./img/img1.jpg" alt="Crema Hidratante de Rosas" class="imagen-producto">
+            <div class="row justify-content-center">
+                <!-- Producto 1 -->
+                <div class="col-md-5 mb-4">
+                    <article class="text-center">
+                        <!-- La imagen está dentro de <article>, el CSS se encarga de hacer el zoom y darle tamaño -->
+                        <img src="./img/img1.jpg" alt="Crema Hidratante de Rosas">
                         <h3>Crema Hidratante de Rosas</h3>
                         <p>$25.00</p>
                     </article>
                 </div>
-                <div class="col-md-6 mb-4">
+                <!-- Producto 2 -->
+                <div class="col-md-5 mb-4">
                     <article class="text-center">
-                        <!-- AQUÍ ESTÁ LA OTRA IMAGEN -->
-                        <img src="./img/img2.jpg" alt="Sérum de Vitamina C" class="imagen-producto">
+                        <img src="./img/img2.jpg" alt="Sérum de Vitamina C">
                         <h3>Sérum de Vitamina C</h3>
                         <p>$30.00</p>
                     </article>
@@ -89,13 +94,13 @@
             </div>
         </section>
 
-        <!-- BENEFICIOS -->
-        <section id="beneficios" class="text-center bg-light p-4 rounded mt-4">
+        <!-- BENEFICIOS (Usando iconos de FontAwesome) -->
+        <section id="beneficios" class="text-center seccion-destacada mt-4">
             <h2>¿Por qué elegirnos?</h2>
-            <ul class="list-unstyled d-flex justify-content-center gap-4 mt-3">
-                <li><i class="fa-solid fa-leaf text-success"></i> 100% Natural</li>
-                <li><i class="fa-solid fa-heart text-danger"></i> Libre de crueldad</li>
-                <li><i class="fa-solid fa-truck text-primary"></i> Envíos a todo el país</li>
+            <ul class="list-unstyled d-flex justify-content-center gap-4 mt-3 flex-wrap">
+                <li><i class="fa-solid fa-leaf" style="color: #7e5bc5;"></i> 100% Natural</li>
+                <li><i class="fa-solid fa-heart" style="color: #d47a7a;"></i> Libre de crueldad</li>
+                <li><i class="fa-solid fa-truck" style="color: var(--color-primario);"></i> Envíos a todo el país</li>
             </ul>
         </section>
     </main>
@@ -104,7 +109,7 @@
         <p>&copy; 2024 Glow & Care. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Bootstrap JS Bundle (incluye Popper) -->
+    <!-- Bootstrap JS (necesario para que el carrusel y el menú hamburguesa funcionen) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
