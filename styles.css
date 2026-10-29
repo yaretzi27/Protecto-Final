@@ -2,12 +2,10 @@
    VARIABLES (Paleta Morada Variada)
    ========================================= */
 :root {
-    /* Diferentes fondos */
     --bg-general: #f4effa;       /* Lila muy claro para el fondo de la página */
     --bg-tarjetas: #ffffff;      /* Blanco puro para resaltar las tarjetas */
     --bg-secciones: #e8def8;     /* Lila un poco más fuerte para secciones especiales */
     
-    /* Diferentes colores para letras y detalles */
     --color-primario: #9c7cdb;   /* Morado medio (Botones) */
     --color-hover: #7e5bc5;      /* Morado más oscuro para cuando pasas el mouse */
     --texto-titulos: #3b2159;    /* Morado muy oscuro casi negro (para títulos) */
@@ -21,7 +19,6 @@
 body {
     background-color: var(--bg-general);
     color: var(--texto-general);
-    /* Fuentes nativas (no requieren internet) */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     display: flex;
     flex-direction: column;
@@ -29,7 +26,6 @@ body {
 }
 
 h1, h2, h3 {
-    /* Fuente nativa con serifas para darle elegancia tipo revista */
     font-family: Georgia, 'Times New Roman', Times, serif; 
     color: var(--texto-titulos);
     font-weight: bold;
@@ -54,10 +50,10 @@ main { flex: 1; }
    TARJETAS Y EFECTO ZOOM
    ========================================= */
 article {
-    background: var(--bg-tarjetas); /* Tarjetas blancas para contrastar con el fondo lila */
+    background: var(--bg-tarjetas);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(59, 33, 89, 0.08); /* Sombra con tinte morado */
+    box-shadow: 0 6px 15px rgba(59, 33, 89, 0.08);
     text-align: center;
     transition: transform 0.3s ease;
     overflow: hidden;
@@ -73,13 +69,15 @@ article p {
     color: var(--texto-general);
 }
 
-/* Efecto Zoom */
+/* Efecto Zoom (Ajustado: Imágenes GRANDES) */
 article img {
-    width: 100%;
-    height: 220px;
+    width: 100%;          /* Ocupa todo el ancho de la tarjeta */
+    height: 300px;        /* Altura grande para que se luzcan (antes 220px) */
     object-fit: cover; 
     border-radius: 8px;
     transition: transform 0.4s ease-in-out;
+    display: block;
+    margin: 0 auto 15px auto; /* Centrada con margen abajo */
 }
 
 article:hover img {
@@ -118,12 +116,12 @@ form {
 }
 
 form label {
-    color: var(--texto-titulos); /* Títulos de los campos en morado oscuro */
+    color: var(--texto-titulos);
     font-weight: 600;
 }
 
 form input, form select, form textarea {
-    background-color: var(--bg-general); /* Los inputs tienen el fondo lila suave */
+    background-color: var(--bg-general);
     color: var(--texto-general);
     border: 1px solid #d1c0e8;
 }
@@ -131,15 +129,14 @@ form input, form select, form textarea {
 form input:focus, form select:focus, form textarea:focus {
     border-color: var(--color-primario);
     box-shadow: 0 0 8px rgba(156, 124, 219, 0.4); 
-    background-color: #ffffff; /* Al hacer clic se vuelve blanco */
+    background-color: #ffffff;
 }
 
 /* =========================================
    SECCIONES CON FONDO DESTACADO
-   (Como la de Beneficios en el Inicio)
    ========================================= */
 .seccion-destacada {
-    background-color: var(--bg-secciones) !important; /* Fondo lila más fuerte */
+    background-color: var(--bg-secciones) !important;
     padding: 30px;
     border-radius: 15px;
 }
@@ -147,9 +144,11 @@ form input:focus, form select:focus, form textarea:focus {
 /* =========================================
    IMÁGENES FUERA DE LAS TARJETAS
    ========================================= */
+
+/* Imagen de Contacto (Ahora GRANDE) */
 .imagen-contacto {
     width: 100%;
-    max-width: 350px;
+    max-width: 450px; /* Aumentado de 220px a 450px para que se vea grande */
     height: auto;
     border-radius: 15px;
     margin-top: 20px;
@@ -157,9 +156,10 @@ form input:focus, form select:focus, form textarea:focus {
     display: block;
 }
 
+/* Imagen de Quiénes Somos (Ya era grande, la mantenemos) */
 .imagen-equipo {
     width: 100%;
-    max-width: 450px;
+    max-width: 500px; /* Un poquito más grande también */
     height: auto;
     border-radius: 15px;
     margin-top: 20px;
@@ -167,10 +167,11 @@ form input:focus, form select:focus, form textarea:focus {
     display: block;
 }
 
+/* Imagen de Rutina */
 .imagen-rutina {
     width: 100%;
-    max-width: 300px;
-    height: 200px;
+    max-width: 350px;
+    height: 250px; /* Un poco más alta */
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(59, 33, 89, 0.15);
@@ -180,8 +181,8 @@ form input:focus, form select:focus, form textarea:focus {
    FOOTER (Contraste fuerte)
    ========================================= */
 footer {
-    background-color: var(--texto-titulos); /* Fondo morado muy oscuro */
-    color: var(--texto-claro); /* Letras lila claro */
+    background-color: var(--texto-titulos); 
+    color: var(--texto-claro); 
     margin-top: auto;
     padding: 25px 0;
     text-align: center;
